@@ -10,8 +10,26 @@
 
 <body>
 
-    <h1>HELLO WORLD</h1>
 
+
+    <H2>{{$hello}}</H2>
+    <h2>{{$word}}</h2>
+
+    @foreach ($user as $utente)
+    @if($loop->first)
+    <span>&downarrow; &downarrow; &downarrow; &downarrow; </span>
+    @endif
+    <h3>Benvenut* :{{$utente}}</h3>
+    @if(!$loop->last)
+    <span>&star;; &star; &star; &star; </span>
+    @endif
+    @if($loop->last)
+    <span>&uparrow; &uparrow; &uparrow; &uparrow; </span>
+    @endif
+
+
+
+    @endforeach
 </body>
 
 </html>
